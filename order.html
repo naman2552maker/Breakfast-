@@ -72,9 +72,12 @@ button {
 
 <script>
 const food = new URLSearchParams(window.location.search).get("food");
+const drink = localStorage.getItem("selectedDrink");
 
-document.getElementById("order").textContent =
-  food ? food : "Your chosen breakfast 🥞";
+document.getElementById("order").innerHTML =
+  "🥤 " + (drink || "No drink selected") +
+  "<br><br>" +
+  "🍽️ " + (food || "No food selected");
 
 function goFinal() {
   window.location.href = "birthday.html";
