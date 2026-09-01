@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Order 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffe8ef;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.card {
+  width: 90%;
+  max-width: 420px;
+  background: white;
+  padding: 35px 25px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+h1 {
+  color: #ff5f87;
+  font-size: 32px;
+}
+
+.order {
+  margin: 25px 0;
+  padding: 20px;
+  background: #fff0f4;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  padding: 14px 28px;
+  border-radius: 14px;
+  background: #ff6f91;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Here's your final order 💗</h1>
+
+  <div class="order" id="order">
+    Loading...
+  </div>
+
+  <button onclick="goFinal()">Continue ❤️</button>
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const food = params.get("food");
+
+document.getElementById("order").textContent =
+  food ? food : "Your chosen breakfast 🥞";
+
+function goFinal() {
+  window.location.href = "birthday.html";
+}
+</script>
+
+</body>
+</html>
