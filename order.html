@@ -71,8 +71,7 @@ button {
 </div>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const food = params.get("food");
+const food = localStorage.getItem("selectedFood");
 
 document.getElementById("order").textContent =
   food ? food : "Your chosen breakfast 🥞";
