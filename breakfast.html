@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose Your Drink 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffeaf0;
+  font-family: "Baloo 2", cursive;
+}
+
+.card {
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(36px, 9vw, 52px);
+  line-height: 1.05;
+  color: #743d50;
+  text-shadow: 3px 4px 0 white;
+  margin-bottom: 15px;
+}
+
+.emoji {
+  font-size: 65px;
+  margin-bottom: 25px;
+}
+
+.drink {
+  width: 100%;
+  margin: 12px 0;
+  padding: 17px;
+  border: none;
+  border-radius: 22px;
+  background: white;
+  color: #f05f85;
+  font-family: "Baloo 2", cursive;
+  font-size: 23px;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(100,50,70,.15);
+}
+
+.drink:active {
+  transform: scale(.96);
+}
+
+#message {
+  margin-top: 25px;
+  font-size: 22px;
+  color: #f05f85;
+  font-weight: 700;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>What drink do you want? 🥤</h1>
+
+  <div class="emoji">💗✨</div>
+
+  <button class="drink" onclick="choose('Lime Mojito 🍋')">
+    🍋 Lime Mojito
+  </button>
+
+  <button class="drink" onclick="choose('Oreo Shake 🍪')">
+    🍪 Oreo Shake
+  </button>
+
+  <button class="drink" onclick="choose('Hot Chocolate 🍫')">
+    🍫 Hot Chocolate
+  </button>
+
+  <div id="message"></div>
+
+</div>
+
+<script>
+function choose(drink) {
+  document.getElementById("message").textContent =
+    "Yummm! " + drink + " 💗";
+}
+</script>
+
+</body>
+</html>
