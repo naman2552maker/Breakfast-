@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Choose Your Drink 💗</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
-
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -18,52 +19,55 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ffeaf0;
-  font-family: "Baloo 2", cursive;
+  background: #ffe8f0;
+  font-family: 'Quicksand', sans-serif;
+  color: #4b3040;
 }
 
 .card {
   width: 90%;
   max-width: 500px;
   text-align: center;
+  padding: 30px 20px;
 }
 
 h1 {
-  font-size: clamp(36px, 9vw, 52px);
-  line-height: 1.05;
-  color: #743d50;
-  text-shadow: 3px 4px 0 white;
-  margin-bottom: 15px;
+  font-size: 34px;
+  margin-bottom: 10px;
 }
 
-.emoji {
-  font-size: 65px;
-  margin-bottom: 25px;
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 
 .drink {
+  display: block;
   width: 100%;
-  margin: 12px 0;
-  padding: 17px;
+  margin: 15px 0;
+  padding: 18px;
   border: none;
-  border-radius: 22px;
+  border-radius: 20px;
   background: white;
-  color: #f05f85;
-  font-family: "Baloo 2", cursive;
-  font-size: 23px;
-  font-weight: 800;
-  box-shadow: 0 8px 20px rgba(100,50,70,.15);
+  color: #e76f9b;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(150, 80, 110, 0.15);
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .drink:active {
-  transform: scale(.96);
+  transform: scale(0.96);
 }
 
 #message {
   margin-top: 25px;
-  font-size: 22px;
-  color: #f05f85;
+  font-size: 20px;
   font-weight: 700;
+  color: #e76f9b;
+  min-height: 30px;
 }
 </style>
 </head>
@@ -74,17 +78,19 @@ h1 {
 
   <h1>What drink do you want? 🥤</h1>
 
-  <div class="emoji">💗✨</div>
+  <div class="subtitle">
+    Pick your favourite 💗
+  </div>
 
-  <button class="drink" onclick="choose('Lime Mojito 🍋')">
-    🍋 Lime Mojito
+  <button class="drink" onclick="chooseDrink('Lime Mojito 🍋‍🟩')">
+    🍋‍🟩 Lime Mojito
   </button>
 
-  <button class="drink" onclick="choose('Oreo Shake 🍪')">
+  <button class="drink" onclick="chooseDrink('Oreo Shake 🥛')">
     🍪 Oreo Shake
   </button>
 
-  <button class="drink" onclick="choose('Hot Chocolate 🍫')">
+  <button class="drink" onclick="chooseDrink('Hot Chocolate ☕')">
     🍫 Hot Chocolate
   </button>
 
@@ -93,9 +99,9 @@ h1 {
 </div>
 
 <script>
-function choose(drink) {
+function chooseDrink(drink) {
   document.getElementById("message").textContent =
-    "Yummm! " + drink + " 💗";
+    "Yummy! " + drink + " 💗";
 }
 </script>
 
