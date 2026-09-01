@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breakfast 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffe8ee;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  width: 92%;
+  max-width: 500px;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 35px;
+  color: #222;
+}
+
+.playground {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+
+button {
+  position: absolute;
+  border: none;
+  border-radius: 14px;
+  padding: 15px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+#yes {
+  left: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  color: #ff6685;
+}
+
+#no {
+  left: 58%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  color: #777;
+  transition: left 0.25s, top 0.25s;
+}
+
+#message {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff6685;
+  min-height: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Do you want your breakfast? 🥞</h1>
+
+  <div class="playground" id="playground">
+    <button id="yes">YES 💗</button>
+    <button id="no">NO 😭</button>
+  </div>
+
+  <div id="message"></div>
+
+</div>
+
+<script>
+const noButton = document.getElementById("no");
+const yesButton = document.getElementById("yes");
+const playground = document.getElementById("playground");
+const message = document.getElementById("message");
+
+noButton.addEventListener("click", function(event) {
+  event.preventDefault();
+
+  const maxX = playground.clientWidth - noButton.offsetWidth;
+  const maxY = playground.clientHeight - noButton.offsetHeight;
+
+  const randomX = Math.random() * maxX;
+  const randomY = Math.random() * maxY;
+
+  noButton.style.left = randomX + "px";
+  noButton.style.top = randomY + "px";
+  noButton.style.transform = "none";
+
+  message.textContent = "Nope 😭 Try again!";
+});
+
+yesButton.addEventListener("click", function() {
+  message.textContent = "Yay! Breakfast it is 🥞💗";
+});
+</script>
+
+</body>
+</html>
