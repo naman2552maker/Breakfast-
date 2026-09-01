@@ -99,8 +99,7 @@ h1 {
 
 <script>
 function chooseFood(food) {
-  localStorage.setItem("selectedFood", food);
-  window.location.href = "order.html";
+    window.location.href = "order.html?food=" + encodeURIComponent(food);
 }
 </script>
 
