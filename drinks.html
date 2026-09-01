@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose Your Drink 🥤</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#ffe8ef;
+  font-family:Arial,sans-serif;
+  text-align:center;
+  color:#4b3040;
+}
+
+.card{
+  width:90%;
+  max-width:500px;
+}
+
+h1{
+  font-size:34px;
+  color:#d95f85;
+  margin-bottom:30px;
+}
+
+.drink{
+  display:block;
+  width:100%;
+  margin:15px 0;
+  padding:18px;
+  border:0;
+  border-radius:20px;
+  background:white;
+  color:#d95f85;
+  font-size:20px;
+  font-weight:bold;
+  box-shadow:0 7px 18px rgba(0,0,0,.10);
+}
+
+.drink:active{
+  transform:scale(.97);
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>What drink do you want? 🥤</h1>
+
+<button class="drink" onclick="chooseDrink('Lime Mojito 🍋')">
+🍋 Lime Mojito
+</button>
+
+<button class="drink" onclick="chooseDrink('Oreo Shake 🍪')">
+🍪 Oreo Shake
+</button>
+
+<button class="drink" onclick="chooseDrink('Hot Chocolate 🍫')">
+🍫 Hot Chocolate
+</button>
+
+</div>
+
+<script>
+function chooseDrink(drink){
+  localStorage.setItem("selectedDrink", drink);
+  window.location.href="food.html";
+}
+</script>
+
+</body>
+</html>
