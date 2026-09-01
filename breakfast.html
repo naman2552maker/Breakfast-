@@ -3,93 +3,130 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Choose Your Drink 💗</title>
+<title>Breakfast 💗</title>
 
 <style>
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ffe8ef;
-    font-family: Arial, sans-serif;
-    color: #3d2735;
+  margin: 0;
+  min-height: 100vh;
+  background: #ffe8ef;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #4b3040;
 }
 
 .card {
-    width: 90%;
-    max-width: 500px;
-    text-align: center;
-    padding: 30px 15px;
+  width: 92%;
+  max-width: 500px;
+  padding: 25px 15px;
 }
 
 h1 {
-    font-size: 38px;
-    margin-bottom: 20px;
+  font-size: 34px;
+  line-height: 1.25;
+  margin-bottom: 12px;
 }
 
 .subtitle {
-    font-size: 22px;
-    margin-bottom: 30px;
+  font-size: 20px;
+  margin-bottom: 35px;
 }
 
-.drink {
-    display: block;
-    width: 100%;
-    margin: 18px 0;
-    padding: 20px;
-    border: none;
-    border-radius: 25px;
-    background: white;
-    color: #d66b9b;
-    font-size: 22px;
-    font-weight: bold;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+.playground {
+  position: relative;
+  width: 100%;
+  height: 180px;
 }
 
-.drink:active {
-    transform: scale(0.97);
+button {
+  position: absolute;
+  border: none;
+  border-radius: 18px;
+  padding: 15px 28px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  cursor: pointer;
+}
+
+#yes {
+  left: 18%;
+  top: 55px;
+  background: white;
+  color: #d96b9b;
+}
+
+#no {
+  left: 58%;
+  top: 55px;
+  background: white;
+  color: #777;
+  transition: all 0.2s ease;
 }
 
 #message {
-    margin-top: 25px;
-    font-size: 20px;
-    color: #d66b9b;
+  font-size: 19px;
+  font-weight: bold;
+  color: #d96b9b;
+  min-height: 30px;
 }
 </style>
 </head>
 
-<h1>What drink do you want? 🥤</h1>
+<body>
 
-<div class="subtitle">
-    Pick your favourite 💗
+<div class="card">
+
+  <h1>Do you want your breakfast? 🥞</h1>
+
+  <div class="subtitle">
+    Pick one 💗
+  </div>
+
+  <div class="playground" id="playground">
+
+    <button id="yes">YES 💗</button>
+
+    <button id="no">NO 😭</button>
+
+  </div>
+
+  <div id="message"></div>
+
 </div>
 
-<button class="drink" onclick="window.location.href='food.html'">
-    🍋 Lime Mojito
-</button>
-
-<button class="drink" onclick="window.location.href='food.html'">
-    🍪 Oreo Shake
-</button>
-
-<button class="drink" onclick="window.location.href='food.html'">
-    🍫 Hot Chocolate
-</button>
-
-<div id="message"></div>
-
 <script>
-function chooseDrink(drink) {
-    window.location.href = "food.html";
-}
-}
+const noButton = document.getElementById("no");
+const yesButton = document.getElementById("yes");
+const playground = document.getElementById("playground");
+const message = document.getElementById("message");
+
+noButton.addEventListener("click", function(event) {
+
+  event.preventDefault();
+
+  const maxX = playground.clientWidth - noButton.offsetWidth;
+  const maxY = playground.clientHeight - noButton.offsetHeight;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  noButton.style.left = x + "px";
+  noButton.style.top = y + "px";
+
+  message.textContent = "Hehe 😭 NO nahi chalega!";
+});
+
+yesButton.addEventListener("click", function() {
+  message.textContent = "Yayyy! Breakfast it is 🥞💗";
+});
 </script>
 
 </body>
